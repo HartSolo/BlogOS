@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import EditorialHeader from '../components/EditorialHeader.astro';
+import GlassCard from '../components/GlassCard.astro';
+---
+
+<Layout title="Minimal Editorial Portfolio">
+  <EditorialHeader
+    title="Narratives in Glass & Sand."
+    subtitle="A warm craft editorial portfolio exploring the intersection of human emotion and digital structure."
+  />
+
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+    <GlassCard title="The Art of Warm Craft" href="/stories/warm-craft">
+      <p>Exploring how earthy tones and physical textures translate into the digital realm, bringing warmth to the cold precision of screens.</p>
+    </GlassCard>
+
+    <GlassCard title="Liquid Glass Structures" href="/stories/liquid-glass">
+      <p>Investigating translucency and light in UI design. How blur and layered depth create intuitive, emotional experiences.</p>
+    </GlassCard>
+  </section>
+
+  <section class="liquid-glass p-8 md:p-12 mb-16">
+    <h2 class="text-3xl font-serif text-deep-forest mb-6">Latest Field Notes</h2>
+    <div class="space-y-6">
+      <a href="#" class="group block border-b border-deep-forest/10 pb-6 last:border-0 last:pb-0">
+        <p class="text-terracotta text-xs uppercase tracking-wider mb-2">Essay — Oct 24</p>
+        <h3 class="text-xl font-serif text-ink-dark group-hover:text-terracotta transition-colors mb-2">On Digital Permanence</h3>
+        <p class="text-ink-light line-clamp-2">Why we structure our stories not just for current readability, but for long-term emotional resonance.</p>
+      </a>
+    </div>
+  </section>
+</Layout>

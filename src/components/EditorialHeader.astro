@@ -1,0 +1,17 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  date?: string;
+}
+
+const { title, subtitle, date } = Astro.props;
+---
+
+<header class="mb-16 md:mb-24 text-center md:text-left">
+  {date && <p class="text-terracotta text-sm uppercase tracking-widest font-medium mb-4">{date}</p>}
+  <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-deep-forest leading-tight mb-6">{title}</h1>
+  {subtitle && <p class="text-xl md:text-2xl text-ink-light font-sans max-w-2xl leading-relaxed">{subtitle}</p>}
+
+  <div class="h-px w-24 bg-terracotta/30 mt-10 mx-auto md:mx-0"></div>
+</header>

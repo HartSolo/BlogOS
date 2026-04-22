@@ -1,0 +1,24 @@
+{
+  "guilds": ["Narrative", "Design System", "Frontend", "Data", "Growth"],
+  "tasks": [
+    {
+      "id": "init_project",
+      "status": "completed",
+      "description": "Initialize Astro project for minimal editorial portfolio"
+    },
+    {
+      "task": "create_project",
+      "status": "pending",
+      "input": {
+        "name": "Editorial Portfolio Minimal",
+        "description": "A minimal editorial portfolio with warm craft and liquid glass design",
+        "type": "case study"
+      },
+      "pipeline": [
+        "NarrativeGuild.structure_case_study",
+        "FrontendGuild.create_card",
+        "FrontendGuild.link_to_page"
+      ]
+    }
+  ]
+}

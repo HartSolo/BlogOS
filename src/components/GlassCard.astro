@@ -1,0 +1,18 @@
+---
+interface Props {
+  title?: string;
+  href?: string;
+  className?: string;
+}
+
+const { title, href, className = '' } = Astro.props;
+
+const Tag = href ? 'a' : 'div';
+---
+
+<Tag href={href} class={`block liquid-glass p-8 md:p-10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${className}`}>
+  {title && <h3 class="text-2xl font-serif text-deep-forest mb-4">{title}</h3>}
+  <div class="text-ink-light leading-relaxed prose prose-stone max-w-none">
+    <slot />
+  </div>
+</Tag>

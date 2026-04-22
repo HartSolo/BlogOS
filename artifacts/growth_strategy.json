@@ -1,0 +1,28 @@
+{
+  "guild": "Growth",
+  "objectives": [
+    "Maximize long-form storytelling retention",
+    "Analyze user interaction with liquid glass UI elements",
+    "Optimize load times for edge/Firebase deployment"
+  ],
+  "tasks": [
+    {
+      "id": "growth_001",
+      "status": "pending",
+      "description": "Implement scroll-depth tracking on MDX articles to measure reading completion rates.",
+      "priority": "high"
+    },
+    {
+      "id": "growth_002",
+      "status": "pending",
+      "description": "A/B test 'warm craft' accent colors on call-to-action buttons for click-through rate optimization.",
+      "priority": "medium"
+    },
+    {
+      "id": "growth_003",
+      "status": "pending",
+      "description": "Setup Firebase Performance Monitoring to ensure backdrop-blur filters don't impact scroll framerates on mobile devices.",
+      "priority": "high"
+    }
+  ]
+}

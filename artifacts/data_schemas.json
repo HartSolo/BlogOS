@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Minimal Editorial Portfolio Schemas",
+  "definitions": {
+    "AnalyticsEvent": {
+      "type": "object",
+      "properties": {
+        "event_id": { "type": "string", "format": "uuid" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "event_type": {
+          "type": "string",
+          "enum": ["page_view", "scroll_depth", "read_complete", "link_click"]
+        },
+        "path": { "type": "string" },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "scroll_percentage": { "type": "number" },
+            "time_on_page_ms": { "type": "number" }
+          }
+        }
+      },
+      "required": ["event_id", "timestamp", "event_type", "path"]
+    },
+    "ContentMetadata": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "slug": { "type": "string" },
+        "publish_date": { "type": "string", "format": "date" },
+        "guild_author": { "type": "string" },
+        "reading_time_minutes": { "type": "integer" },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["id", "title", "slug", "publish_date", "guild_author"]
+    }
+  }
+}

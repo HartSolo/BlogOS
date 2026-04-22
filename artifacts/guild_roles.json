@@ -1,0 +1,9 @@
+{
+  "guilds": {
+    "Narrative": "Maintain narrative consistency, optimize for readability and emotional tone.",
+    "Design System": "Ensure UI reflects editorial + warm craft tone with liquid glass elements.",
+    "Frontend": "Structure outputs for Astro + Firebase deployment.",
+    "Data": "Manage JSON data and events schema.",
+    "Growth": "Monitor outputs, analytics, and strategy."
+  }
+}
