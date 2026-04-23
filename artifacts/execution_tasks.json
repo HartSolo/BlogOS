@@ -8,7 +8,7 @@
     },
     {
       "task": "create_project",
-      "status": "pending",
+      "status": "completed",
       "input": {
         "name": "Editorial Portfolio Minimal",
         "description": "A minimal editorial portfolio with warm craft and liquid glass design",
@@ -19,6 +19,26 @@
         "FrontendGuild.create_card",
         "FrontendGuild.link_to_page"
       ]
+    },
+    {
+      "task": "create_story",
+      "status": "completed",
+      "input": {
+        "raw_note": "Investigating translucency and light in UI design. How blur and layered depth create intuitive, emotional experiences.",
+        "tone": "minimal editorial warm craft"
+      },
+      "pipeline": [
+        "NarrativeGuild.generate_mdx",
+        "NarrativeGuild.create_excerpt",
+        "DesignGuild.apply_tokens",
+        "FrontendGuild.generate_astro_page",
+        "DataGuild.attach_tracking"
+      ],
+      "output": {
+        "mdx": "src/pages/stories/liquid-glass.mdx",
+        "astro_page": "/stories/liquid-glass",
+        "events": ["read_start", "scroll_75", "read_complete"]
+      }
     }
   ]
 }

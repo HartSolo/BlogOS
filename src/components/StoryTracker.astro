@@ -1,0 +1,61 @@
+---
+interface Props {
+  storyId: string;
+}
+
+const { storyId } = Astro.props;
+---
+
+<script is:inline define:vars={{ storyId }}>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Helper to send events
+    const sendEvent = async (eventType, meta = {}) => {
+      try {
+        await fetch('/api/events.json', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            event_id: crypto.randomUUID(),
+            timestamp: new Date().toISOString(),
+            event_type: eventType,
+            path: window.location.pathname,
+            story_id: storyId,
+            metadata: meta
+          })
+        });
+      } catch (e) {
+        console.error("Failed to track event", e);
+      }
+    };
+
+    // Track Read Start
+    sendEvent("read_start");
+
+    // Track Scroll Depth and Read Complete
+    let scroll75Fired = false;
+    let readCompleteFired = false;
+
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+      if (docHeight <= 0) return; // Prevent divide by zero if page is too short
+
+      const scrollPercentage = (scrollY / docHeight) * 100;
+
+      if (scrollPercentage >= 75 && !scroll75Fired) {
+        scroll75Fired = true;
+        sendEvent("scroll_75", { scroll_percentage: scrollPercentage });
+      }
+
+      if (scrollPercentage >= 95 && !readCompleteFired) {
+        readCompleteFired = true;
+        sendEvent("read_complete", { scroll_percentage: scrollPercentage });
+        // Optional: remove listener if all events are fired
+        window.removeEventListener("scroll", onScroll);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+  });
+</script>

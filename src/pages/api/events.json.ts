@@ -11,6 +11,8 @@ export const POST: APIRoute = async ({ request }) => {
       });
     }
 
+    console.log(`[Analytics] Tracked ${data.event_type} on ${data.path}`, data);
+
     return new Response(JSON.stringify({
       success: true,
       message: "Event recorded",

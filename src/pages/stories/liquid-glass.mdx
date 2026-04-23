@@ -1,0 +1,39 @@
+---
+layout: ../../layouts/Layout.astro
+title: "Liquid Glass Structures"
+date: "2023-11-05"
+author: "Narrative Guild"
+description: "Investigating translucency and light in UI design. How blur and layered depth create intuitive, emotional experiences."
+---
+
+import EditorialHeader from '../../components/EditorialHeader.astro';
+import GlassCard from '../../components/GlassCard.astro';
+import StoryTracker from '../../components/StoryTracker.astro';
+
+<StoryTracker storyId="liquid-glass" />
+
+<EditorialHeader
+  title="Liquid Glass Structures"
+  subtitle="Investigating translucency and light in UI design."
+  date="Nov 05, 2023"
+/>
+
+<div className="prose prose-stone prose-lg max-w-2xl mx-auto md:mx-0 text-ink-dark font-sans leading-loose tracking-story-content">
+
+There is an ethereal quality to materials that let light pass through them without revealing the entirety of what lies behind. In the physical world, frosted glass obscures detail but hints at presence. In the digital realm, we call this *Liquid Glass*.
+
+### The Excerpt
+> *When we design with liquid glass, we aren’t just blurring a background. We are creating a sense of depth and hierarchy, allowing the user to feel the physical space of the digital canvas without overwhelming them with information.*
+
+<GlassCard className="my-10">
+  #### The Anatomy of a Glass Component
+  - **Base Translucency**: `rgba(255, 255, 255, 0.4)`
+  - **The Filter**: `backdrop-blur-md`
+  - **The Edge**: A crisp 1px border at 20% opacity to catch the light.
+</GlassCard>
+
+By combining the earthy, grounding tones of Warm Craft with the ethereal floating panels of Liquid Glass, we arrive at an interface that feels both structurally sound and emotionally resonant.
+
+It is minimal, editorial, and above all, human.
+
+</div>
